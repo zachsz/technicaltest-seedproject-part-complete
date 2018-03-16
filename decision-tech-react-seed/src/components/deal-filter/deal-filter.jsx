@@ -9,15 +9,30 @@ class DealFilter extends React.Component {
       <div className="deal-filter-menu">
         <ul>
           <li>
-            <input id="filter-broadband" type="checkbox" onChange={handleChange} value="broadband" />
+            <input
+              id="filter-broadband"
+              type="checkbox"
+              onChange={handleChange}
+              value="broadband"
+            />
             <label htmlFor="filter-broadband">Broadband</label>
           </li>
           <li>
-            <input id="filter-tv" type="checkbox" onChange={handleChange} value="tv" />
+            <input
+              id="filter-tv"
+              type="checkbox"
+              onChange={handleChange}
+              value="tv"
+            />
             <label htmlFor="filter-tv">TV</label>
           </li>
           <li>
-            <input id="filter-mobile" type="checkbox" onChange={handleChange} value="mobile" />
+            <input
+              id="filter-mobile"
+              type="checkbox"
+              onChange={handleChange}
+              value="mobile"
+            />
             <label htmlFor="filter-mobile">Mobile</label>
           </li>
         </ul>
