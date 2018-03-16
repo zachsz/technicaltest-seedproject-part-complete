@@ -13,6 +13,7 @@ class DealFilter extends React.Component {
               id="filter-broadband"
               type="checkbox"
               onChange={handleChange}
+              checked={filterState.broadband}
               value="broadband"
             />
             <label htmlFor="filter-broadband">Broadband</label>
@@ -22,6 +23,7 @@ class DealFilter extends React.Component {
               id="filter-tv"
               type="checkbox"
               onChange={handleChange}
+              checked={filterState.tv}
               value="tv"
             />
             <label htmlFor="filter-tv">TV</label>
@@ -31,6 +33,7 @@ class DealFilter extends React.Component {
               id="filter-mobile"
               type="checkbox"
               onChange={handleChange}
+              checked={filterState.mobile}
               value="mobile"
             />
             <label htmlFor="filter-mobile">Mobile</label>
