@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import App from './app.jsx';
-import { DealRow } from '../deal-table/deal-table';
 
 describe('App', () => {
   describe('GIVEN when filtering by "broadband"', () => {
@@ -19,7 +18,7 @@ describe('App', () => {
 
       expect(tableRows).toHaveLength(4);
       tableRows.forEach(row => {
-        expect(expectedDealsIds.includes(row.props().id));
+        expect(expectedDealsIds.includes(row.prop('data-deal-id')));
       });
     });
   });

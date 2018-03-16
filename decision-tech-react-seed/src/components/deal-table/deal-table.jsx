@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './deal-table.scss';
 
-export function DealRow(deal) {
+function DealRow(deal) {
   return (
-    <tr id={deal.id} className="broadband-grid__deal">
+    <tr className="broadband-grid__deal" data-deal-id={deal.id}>
       <td className="broadband-grid__property">{deal.title}</td>
       <td className="broadband-grid__property">£{deal.cost}</td>
     </tr>
