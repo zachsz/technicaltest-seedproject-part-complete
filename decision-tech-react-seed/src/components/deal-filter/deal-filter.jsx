@@ -9,27 +9,15 @@ class DealFilter extends React.Component {
       <div className="deal-filter-menu">
         <ul>
           <li>
-            <input
-              type="checkbox"
-              onChange={handleChange}
-              value="broadband"
-            />
+            <input type="checkbox" onChange={handleChange} value="broadband" />
             Broadband
           </li>
           <li>
-            <input
-              type="checkbox"
-              onChange={handleChange}
-              value="tv"
-            />
+            <input type="checkbox" onChange={handleChange} value="tv" />
             TV
           </li>
           <li>
-            <input
-              type="checkbox"
-              onChange={handleChange}
-              value="mobile"
-            />
+            <input type="checkbox" onChange={handleChange} value="mobile" />
             Mobile
           </li>
         </ul>
@@ -39,12 +27,12 @@ class DealFilter extends React.Component {
 }
 
 DealFilter.propTypes = {
-    filterState: PropTypes.shape({
-        broadband: PropTypes.bool.isRequired,
-        tv: PropTypes.bool.isRequired,
-        mobile: PropTypes.bool.isRequired
-    }),
-    handleChange: PropTypes.func.isRequired
+  filterState: PropTypes.shape({
+    broadband: PropTypes.bool.isRequired,
+    tv: PropTypes.bool.isRequired,
+    mobile: PropTypes.bool.isRequired
+  }),
+  handleChange: PropTypes.func.isRequired
 };
 
 export default DealFilter;
