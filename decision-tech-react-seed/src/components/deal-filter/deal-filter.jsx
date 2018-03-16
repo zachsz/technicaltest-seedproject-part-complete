@@ -13,7 +13,6 @@ class DealFilter extends React.Component {
               id="filter-broadband"
               type="checkbox"
               onChange={handleChange}
-              checked={filterState.broadband}
               value="broadband"
             />
             <label htmlFor="filter-broadband">Broadband</label>
@@ -23,7 +22,6 @@ class DealFilter extends React.Component {
               id="filter-tv"
               type="checkbox"
               onChange={handleChange}
-              checked={filterState.tv}
               value="tv"
             />
             <label htmlFor="filter-tv">TV</label>
@@ -33,7 +31,6 @@ class DealFilter extends React.Component {
               id="filter-mobile"
               type="checkbox"
               onChange={handleChange}
-              checked={filterState.mobile}
               value="mobile"
             />
             <label htmlFor="filter-mobile">Mobile</label>
@@ -45,11 +42,6 @@ class DealFilter extends React.Component {
 }
 
 DealFilter.propTypes = {
-  filterState: PropTypes.shape({
-    broadband: PropTypes.bool.isRequired,
-    tv: PropTypes.bool.isRequired,
-    mobile: PropTypes.bool.isRequired
-  }),
   handleChange: PropTypes.func.isRequired
 };
 

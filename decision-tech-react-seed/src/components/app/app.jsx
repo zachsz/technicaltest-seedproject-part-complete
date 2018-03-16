@@ -28,10 +28,7 @@ class App extends React.Component {
       <div className="app">
         <SiteNav />
         <div className="deals-layout">
-          <DealFilter
-            filterState={this.state.filter}
-            handleChange={this.handleFilterChange}
-          />
+          <DealFilter handleChange={this.handleFilterChange} />
           <div className="deals-layout__grid">
             <DealTable deals={this.state.data} />
           </div>
