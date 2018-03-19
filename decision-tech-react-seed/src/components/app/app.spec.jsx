@@ -8,10 +8,11 @@ describe('App', () => {
       const expectedDealsIds = [6158, 4359, 4371, 5459];
       const wrapper = mount(<App />);
       const broadbandCheckbox = wrapper.find('.deal-filter-menu input[value="broadband"]');
-      const tableRows = wrapper.find('.broadband-grid__deal');
-
+      
       broadbandCheckbox.simulate('click');
-
+      
+      const tableRows = wrapper.find('.broadband-grid__deal');
+      
       expect(tableRows).toHaveLength(4);
       tableRows.forEach(row => {
         expect(
