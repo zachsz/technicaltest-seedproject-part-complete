@@ -1,13 +1,12 @@
 import Vue from 'vue';
-
-import NavMenu from './components/navmenu-component/navmenu-component.vue';
-import AppComponent from './components/app-component/app-component.vue';
+import SiteNav from './components/site-nav/site-nav.vue';
+import App from './components/app/app.vue';
 import './styles.scss';
 
 new Vue({
   el: '#app',
   components: {
-    'app-component': AppComponent,
-    'navmenu-component': NavMenu
+    App,
+    SiteNav
   }
 });
