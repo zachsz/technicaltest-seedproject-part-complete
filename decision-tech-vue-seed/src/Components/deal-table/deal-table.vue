@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody class="broadband-grid__section">
-            <tr class="broadband-grid__deal" v-for="deal in deals" v-bind:key="deal.id">
+            <tr class="broadband-grid__deal" v-for="deal in deals" v-bind:key="deal.id" :data-deal-id="deal.id">
                 <td class="broadband-grid__deal__property">{{deal.title}}</td>
                 <td class="broadband-grid__deal__property">£{{deal.cost}}</td>    
             </tr>

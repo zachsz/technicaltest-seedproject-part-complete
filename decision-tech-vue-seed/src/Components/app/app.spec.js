@@ -1,17 +1,24 @@
 import Vue from 'vue';
-import { beforeEachHooks, afterEachHooks, shallow } from 'vue-unit';
-import MyComponent from './app.vue';
-
+import { mount } from '@vue/test-utils';
+import App from './app.vue';
 
 describe('App', () => {
-  beforeEach(beforeEachHooks);
-  afterEach(afterEachHooks);
+  describe('GIVEN when filtering by "broadband"', () => {
+    it('should show the 4 broadband only deals', () => {
+      const expectedDealsIds = [6158, 4359, 4371, 5459];
+      const wrapper = mount(App);
+      const broadbandCheckbox = wrapper.find('.filter-menu input[value="broadband"]');
 
-  it('sets the correct default data', () => {
-    const vm = shallow(MyComponent);
-    expect(typeof MyComponent.data).toBe('function')
-    const defaultData = MyComponent.data()
-    expect(defaultData.deals.length).toBe(0)
-    vm.$el.classList.contains('deals-layout')
+      broadbandCheckbox.trigger('change');
+
+      const tableRows = wrapper.findAll('.broadband-grid__deal');
+
+      expect(tableRows.length).toBe(4);
+      tableRows.filter(node => {
+        expect(
+          expectedDealsIds.includes(parseInt(node.attributes()['data-deal-id'], 10))
+        ).toBe(true);
+      });
+    });
   });
 });

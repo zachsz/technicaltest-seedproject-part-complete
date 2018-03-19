@@ -1,20 +1,18 @@
 <template>
-    <div class="filter-menu">
-        <ul>
-            <li>
-                <input id="filter-broadband" type="checkbox" v-model="filter.broadband" @change="filterChanged" value="broadband" />
-                <label for="filter-broadband">Broadband</label>
-            </li>
-            <li>
-                <input id="filter-tv" type="checkbox" v-model="filter.tv" @change="filterChanged" value="tv" />
-                <label for="filter-tv">TV</label>
-            </li>
-            <li>
-                <input id="filter-mobile" type="checkbox" v-model="filter.mobile" @change="filterChanged" value="mobile" />
-                <label for="filter-mobile">Mobile</label>
-            </li>
-        </ul>
-    </div>
+    <ul class="filter-menu">
+        <li>
+            <input id="filter-broadband" type="checkbox" v-model="filter.broadband" @change="handleFilterChange" value="broadband" />
+            <label for="filter-broadband">Broadband</label>
+        </li>
+        <li>
+            <input id="filter-tv" type="checkbox" v-model="filter.tv" @change="handleFilterChange" value="tv" />
+            <label for="filter-tv">TV</label>
+        </li>
+        <li>
+            <input id="filter-mobile" type="checkbox" v-model="filter.mobile" @change="handleFilterChange" value="mobile" />
+            <label for="filter-mobile">Mobile</label>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -29,7 +27,7 @@ export default {
         };
     },
     methods: {
-        filterChanged(event) {
+        handleFilterChange(event) {
             console.log(event);
         }
     }

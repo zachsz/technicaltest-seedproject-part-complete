@@ -19,7 +19,7 @@ module.exports = function(config) {
         },
         port: 9878,
         frameworks: ['jasmine'],
-        browsers: ['Chrome'],
+        browsers: ['ChromeHeadless'],
             client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
