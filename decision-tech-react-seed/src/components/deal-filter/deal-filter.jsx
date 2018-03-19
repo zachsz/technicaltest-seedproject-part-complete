@@ -4,7 +4,6 @@ import './deal-filter.scss';
 
 class DealFilter extends React.Component {
   render() {
-    const { filterState, handleChange } = this.props;
     return (
       <div className="deal-filter-menu">
         <ul>
@@ -12,7 +11,7 @@ class DealFilter extends React.Component {
             <input
               id="filter-broadband"
               type="checkbox"
-              onChange={handleChange}
+              onChange={this.props.handleChange}
               value="broadband"
             />
             <label htmlFor="filter-broadband">Broadband</label>
@@ -21,7 +20,7 @@ class DealFilter extends React.Component {
             <input
               id="filter-tv"
               type="checkbox"
-              onChange={handleChange}
+              onChange={this.props.handleChange}
               value="tv"
             />
             <label htmlFor="filter-tv">TV</label>
@@ -30,7 +29,7 @@ class DealFilter extends React.Component {
             <input
               id="filter-mobile"
               type="checkbox"
-              onChange={handleChange}
+              onChange={this.props.handleChange}
               value="mobile"
             />
             <label htmlFor="filter-mobile">Mobile</label>
