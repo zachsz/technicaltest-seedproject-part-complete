@@ -1,31 +1,25 @@
-import { FilterState } from "./filterState";
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
+import { FilterState } from './filterStateService.d';
 
 @Injectable()
 export class FilterStateService {
+  private subject: BehaviorSubject<FilterState>;
 
-    private subject: BehaviorSubject<FilterState.State>;
+  constructor() {
+    this.subject = new BehaviorSubject<FilterState>({
+      broadband: false,
+      tv: false,
+      mobile: false
+    });
+  }
 
-    constructor() {
-        this.subject = new BehaviorSubject<FilterState.State>(
-            {
-                productTypes: {
-                    broadband: true
-                },
-                speed: "",
-                mobileData: ""
-            }
-        )
-    }
+  changeState(newState: FilterState) {
+    this.subject.next(newState);
+  }
 
-    changeState(newState: FilterState.State) {
-        this.subject.next(newState)
-    }
-
-    getState(): BehaviorSubject<FilterState.State> {
-        return this.subject;
-    }
-
+  getState(): BehaviorSubject<FilterState> {
+    return this.subject;
+  }
 }

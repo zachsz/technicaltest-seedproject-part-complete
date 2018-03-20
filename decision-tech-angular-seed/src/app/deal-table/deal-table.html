@@ -1,0 +1,14 @@
+<table class="broadband-grid">
+    <thead class="broadband-grid__headings">
+        <tr>
+            <th>About</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody class="broadband-grid__section">
+        <tr *ngFor="let deal of deals" class="broadband-grid__deal">
+            <td class="broadband-grid__deal__property">{{deal.title}}</td>
+            <td class="broadband-grid__deal__property">£{{deal.cost}}</td>
+        </tr>
+    </tbody>
+</table>
