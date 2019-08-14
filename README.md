@@ -1,6 +1,10 @@
 # Decision Technologies Front-End Technical Test
 
-## Prerequisites
+## Getting started
+
+Please fork this repository to get started.
+
+### Prerequisites
 
 - NodeJS (at least latest LTS)
 - Modern browser that supports ES6+ (classes, arrow functions etc)
