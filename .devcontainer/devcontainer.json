@@ -15,7 +15,7 @@
   // You can edit these settings after create using File > Preferences > Settings > Remote.
   "settings": {
     // This dev container does include /bin/bash if you prefer to use it instead of ash.
-    "terminal.integrated.shell.linux": "/bin/ash"
+    "terminal.integrated.shell.linux": "/usr/bin/fish"
   },
   // Uncomment the next line if you want to publish any ports.
   "appPort": [

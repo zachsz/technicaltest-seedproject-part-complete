@@ -13,7 +13,7 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 # Install git, bash, dependencies, and add a non-root user
-RUN apk add --no-cache git bash libgcc libstdc++ \
+RUN apk add --no-cache git bash libgcc libstdc++ fish \
   #
   # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
   && addgroup -g $USER_GID $USERNAME \
