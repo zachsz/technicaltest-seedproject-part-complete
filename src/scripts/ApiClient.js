@@ -1,8 +1,6 @@
-const baseUrl = "http://localhost:3000";
-
 class ApiClient {
   getDeals() {
-    return fetch(baseUrl + "/deals")
+    return fetch("/deals")
       .then(response => response.json())
       .then(data => data);
   }
