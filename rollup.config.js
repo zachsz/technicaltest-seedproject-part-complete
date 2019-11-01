@@ -21,7 +21,7 @@ module.exports = {
     rollupPluginServe({
       open: true,
       contentBase: distPath,
-      host: "localhost",
+      host: "0.0.0.0",
       port: 5000
     }),
     rollupPluginLiveReload({
