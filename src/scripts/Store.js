@@ -15,6 +15,22 @@ class Store extends Observable {
   }
 
   filter() {
+    if (this.state.productFilters.length) {
+      return this.state.deals.filter(deal => {
+        const types = deal.productTypes
+          .filter(type => type !== 'Phone')
+          .map(type => {
+            if (type.toLowerCase().indexOf('broadband') > -1) {
+              return 'broadband';
+            }
+            return type.toLowerCase();
+          })
+          .sort()
+          .join(',');
+
+        return types === this.state.productFilters.join(',');
+      });
+    }
     return this.state.deals;
   }
 
@@ -31,6 +47,7 @@ class Store extends Observable {
     } else {
       this.state.productFilters.splice(index, 1);
     }
+    this.state.productFilters.sort();
     this.notify(this.state);
   }
 

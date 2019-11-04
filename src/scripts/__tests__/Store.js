@@ -3,20 +3,20 @@ import mockData from "../../../public/db.json";
 
 describe("filter", () => {
   let sut;
-  
+
   beforeEach(function () {
     sut = new Store();
     sut.setDeals(mockData.deals);
   });
-  
+
   it("should return all deals when no filters applied", () => {
     expect(sut.deals).toEqual(mockData.deals);
   });
-  
+
   describe("product filters", () => {
     it("should return 4 broadband only deals when broadband filter is applied", () => {
       sut.setProductFilter("broadband");
-      
+
       expect(sut.deals.length).toEqual(4);
       expect(sut.deals).toEqual([
         {
@@ -80,13 +80,13 @@ describe("filter", () => {
 
     it("should return an empty array when only mobile filter is applied", () => {
       sut.setProductFilter("mobile");
-    
+
       expect(sut.deals.length).toEqual(0);
     });
-    
+
     it("should return an empty array when only tv filter is applied", () => {
       sut.setProductFilter("tv");
-    
+
       expect(sut.deals.length).toEqual(0);
     });
 
@@ -112,11 +112,11 @@ describe("filter", () => {
         }
       ]);
     })
-    
+
     it("should return 4 broadband and tv deals when broadband and tv filters are applied", () => {
       sut.setProductFilter("broadband");
       sut.setProductFilter("tv");
-      
+
       expect(sut.deals.length).toEqual(4);
       expect(sut.deals).toEqual([
         {
@@ -220,7 +220,7 @@ describe("filter", () => {
           "productTypes": ["Phone", "Broadband", "Mobile", "TV"],
           "contractLength": 12
         }
-      ])
+      ]);
     });
   });
 });
