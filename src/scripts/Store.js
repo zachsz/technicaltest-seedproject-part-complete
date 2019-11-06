@@ -15,8 +15,9 @@ class Store extends Observable {
   }
 
   filter() {
+    let deals = this.state.deals;
     if (this.state.productFilters.length) {
-      return this.state.deals.filter(deal => {
+      deals = deals.filter(deal => {
         const types = deal.productTypes
           .filter(type => type !== 'Phone')
           .map(type => {
@@ -31,7 +32,10 @@ class Store extends Observable {
         return types === this.state.productFilters.join(',');
       });
     }
-    return this.state.deals;
+    if (this.state.providerFilter) {
+      deals = deals.filter(deal => deal.provider.id === this.state.providerFilter);
+    }
+    return deals;
   }
 
   setDeals(data) {
